@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- otb.supplier tree view -->
+    <record id="otb_supplier_view_tree" model="ir.ui.view">
+        <field name="name">Supplier</field>
+        <field name="model">otb.supplier</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="platform"/>
+                <field name="alamat"/>
+                <field name="tlp"/>
+            </tree>
+        </field>
+    </record>
+    <!-- otb.supplier form view -->
+    <record id="model_name_view_form" model="ir.ui.view">
+        <field name="name">Supplier</field>
+        <field name="model">otb.supplier</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="platform"/>
+                        <field name="alamat"/>
+                        <field name="tlp"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- otb.supplier action window -->
+    <record id="otb_supplier_action" model="ir.actions.act_window">
+        <field name="name">Daftar Supplier</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">otb.supplier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="otb_supplier_menu_act" 
+              name="Supplier" 
+              parent="otb_operasional_menu_categ" 
+              action="otb_supplier_action" 
+              sequence="30"/>
+</odoo>

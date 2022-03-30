@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- otb.aset tree view -->
+    <record id="otb_aset_view_tree" model="ir.ui.view">
+        <field name="name">Aset</field>
+        <field name="model">otb.aset</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="stok"/>
+                <field name="harga_satuan"/>
+                <field name="type"/>
+                <field name="kondisi"/>
+                <field name="supplieraset_id"/>
+            </tree>
+        </field>
+    </record>
+    <!-- otb.aset form view -->
+    <record id="otb_aset_view_form" model="ir.ui.view">
+        <field name="name">Tambah Aset</field>
+        <field name="model">otb.aset</field>
+        <field name="arch" type="xml">
+            <form string="Detail Aset">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="stok"/>
+                        <field name="harga_satuan"/>
+                        <field name="type"/>
+                        <field name="kondisi"/>
+                        <field name="supplieraset_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- otb.aset action window -->
+    <record id="otb_aset_action" model="ir.actions.act_window">
+        <field name="name">Daftar Aset</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">otb.aset</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="otb_aset_menu_act" 
+              name="Aset" 
+              parent="otb_operasional_menu_categ" 
+              action="otb_aset_action" 
+              sequence="20"/>
+</odoo>

@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- otb.produk tree view -->
+    <record id="otb_produk_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Produk</field>
+        <field name="model">otb.produk</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="stok"/>
+                <field name="harga_beli"/>
+                <field name="harga_jual"/>
+                <field name="supplierproduk_id"/>
+            </tree>
+        </field>
+    </record>
+    <!-- otb.produk form view -->
+    <record id="otb_produk_view_form" model="ir.ui.view">
+        <field name="name">Detail Produk</field>
+        <field name="model">otb.produk</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="stok"/>
+                        <field name="harga_beli"/>
+                        <field name="harga_jual"/>
+                        <field name="supplierproduk_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- otb.produk action window -->
+    <record id="otb_produk_action" model="ir.actions.act_window">
+        <field name="name">Daftar Produk</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">otb.produk</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="otb_produk_menu_act" 
+              name="Produk" 
+              parent="otb_operasional_menu_categ" 
+              action="otb_produk_action" 
+              sequence="10"/>
+</odoo>
