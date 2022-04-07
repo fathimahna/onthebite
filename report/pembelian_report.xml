@@ -9,7 +9,7 @@
                         <h2>
                         <div class="row">
                             <div class="col-4">Kode Order :</div>
-                            <div class="col-8"><span t-field="o.id_pembelian"/></div>
+                            <div class="col-8"><span t-fiegitld="o.id_pembelian"/></div>
                         </div>
                         <div class="row">
                         <div class="col-4">Nama :</div>
