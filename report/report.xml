@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    
+     <record id="report_otb_pembelian" model="ir.actions.report">
+        <field name="name">Report Order On The Bite</field>
+        <field name="model">otb.pembelian</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">onthebite.report_otb_pembelian</field>
+        <field name="report_file">onthebite.report_otb_pembelian</field>
+        <field name="binding_model_id" ref="model_otb_pembelian"/>
+        <field name="binding_type">report</field>
+    </record>
+    
+</odoo>

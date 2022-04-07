@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- otb.paketproduk tree view -->
+    <record id="otb_paketproduk_view_tree" model="ir.ui.view">
+        <field name="name">Daftar Paket</field>
+        <field name="model">otb.paketproduk</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- Add your fields here -->
+                <field name="name"/>
+                <field name="produk_id"/>
+                <field name="qty"/>
+                <field name="harga"/>
+            </tree>
+        </field>
+    </record>
+    <!-- otb.paketproduk form view -->
+    <record id="otb_paketproduk_view_form" model="ir.ui.view">
+        <field name="name">Detail Paket</field>
+        <field name="model">otb.paketproduk</field>
+        <field name="arch" type="xml">
+            <form string="Detail Paket">
+                <sheet>
+                    <group>
+                        <!-- Add your fields here -->
+                        <field name="name"/>
+                        <field name="produk_id"/>
+                        <field name="harga_satuan"/>
+                        <field name="qty"/>
+                        <field name="harga"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- otb.paketproduk action window -->
+    <record id="otb_paketproduk_action" model="ir.actions.act_window">
+        <field name="name">Paket Produk</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">otb.paketproduk</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="otb_paketproduk_menu_act" 
+              name="Paket Produk" 
+              parent="otb_produk_menu_categ" 
+              action="otb_paketproduk_action" 
+              sequence="10"/>
+</odoo>

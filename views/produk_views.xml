@@ -9,8 +9,7 @@
                 <!-- Add your fields here -->
                 <field name="name"/>
                 <field name="stok"/>
-                <field name="harga_beli"/>
-                <field name="harga_jual"/>
+                <field name="harga_satuan"/>
                 <field name="supplierproduk_id"/>
             </tree>
         </field>
@@ -26,8 +25,7 @@
                         <!-- Add your fields here -->
                         <field name="name"/>
                         <field name="stok"/>
-                        <field name="harga_beli"/>
-                        <field name="harga_jual"/>
+                        <field name="harga_satuan"/>
                         <field name="supplierproduk_id"/>
                     </group>
                 </sheet>
@@ -44,7 +42,7 @@
     <!-- This Menu Item must have a parent and an action -->
     <menuitem id="otb_produk_menu_act" 
               name="Produk" 
-              parent="otb_operasional_menu_categ" 
+              parent="otb_produk_menu_categ" 
               action="otb_produk_action" 
-              sequence="10"/>
+              sequence="20"/>
 </odoo>

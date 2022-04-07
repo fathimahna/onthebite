@@ -33,7 +33,10 @@
         'views/aset_views.xml',
         'views/supplier_views.xml',
         'views/pesananpembeli_views.xml',
-        'views/keuangan_views.xml'
+        'views/keuangan_views.xml',
+        'views/paketproduk_views.xml',
+        'report/report.xml',
+        'report/pembelian_report.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

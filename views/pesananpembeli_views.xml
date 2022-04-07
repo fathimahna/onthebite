@@ -7,11 +7,10 @@
         <field name="arch" type="xml">
             <tree>
                 <!-- Add your fields here -->
-                <field name="id_order"/>
+                <field name="id_pembelian"/>
                 <field name="name"/>
                 <field name="tgl_pesanan"/>
                 <field name="total"/>
-                <field name="pesananproduk_ids"/>
             </tree>
         </field>
     </record>
@@ -24,25 +23,16 @@
                 <sheet>
                     <group>
                         <!-- Add your fields here -->
-                        <field name="id_order"/>
+                        <field name="id_pembelian"/>
                         <field name="name"/>
                         <field name="tgl_pesanan"/>
-                        <field name="total"/>
                         <field name="pesananproduk_ids">
                             <tree string='Rincian Produk' editable='top'>
-                                <field name="name"/>
+                                <field name="paketproduk_id"/>
                                 <field name="harga_satuan"/>
                                 <field name="qty"/>
-                                <field name="harga"/>
+                                <field name="harga" sum="Total"/>
                             </tree>
-                            <form string="Rincian Produk">
-                                <group>
-                                    <field name="name"/>
-                                    <field name="harga_satuan"/>
-                                    <field name="qty"/>
-                                    <field name="harga"/>         
-                                </group>
-                            </form>
                         </field>
                     </group>
                 </sheet>

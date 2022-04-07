@@ -5,21 +5,23 @@ class Produk(models.Model):
     _name = 'otb.produk'
     _description = 'New Description'
 
-    supplierproduk_id = fields.Many2one(comodel_name='otb.supplier', 
+    supplierproduk_id = fields.Many2one(comodel_name='res.partner', 
                                         string='Supplier',
-                                        required=True)
-    pesananproduk_ids = fields.One2many(
-        string='Produk',
-        comodel_name='otb.pesananproduk',
-        inverse_name='produk_id'
-    )
+                                        domain=[('is_customernya','=',True)],
+                                        store=True)
+
+    pilihanproduk_ids = fields.One2many(comodel_name='otb.pilihan', 
+                                        inverse_name='produk_id', string='Produk')
+                                    
+    paket_ids = fields.One2many(comodel_name='otb.paketproduk', inverse_name='produk_id', string='Paket Produk')
+    
 
     name = fields.Char(string='Nama Produk', required=True)
     stok = fields.Integer(string='Quantity')
-    harga_beli = fields.Float(string='Harga Beli')
-    harga_jual = fields.Float(string='Harga Jual')
     
-    
-    
+    harga_satuan = fields.Float(string='Harga Satuan')
+
+
+
     
     

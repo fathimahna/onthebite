@@ -7,13 +7,10 @@ class Keuangan(models.Model):
     _description = 'New Description'
     _order = 'id asc'
 
-    id_transaksi = fields.Char(string='Kode Transaksi')
+    name = fields.Char(string='Pemesan')
+    
     tgl_transaksi = fields.Date(string='Tanggal Transaksi', 
                                 default=fields.Date.today())
-
-    type = fields.Selection(selection=[
-                            ('pemasukan', 'Pemasukan'), ('Pengeluaran', 'Pengeluaran')], 
-                            string='Jenis Transaksi')
 
     debit = fields.Float(string='Debit')
     kredit = fields.Float(string='Kredit')
@@ -23,9 +20,9 @@ class Keuangan(models.Model):
     @api.depends('debit', 'kredit')
     def _compute_saldo(self):
         for record in self:
-            prev = self.search_read([('id', '<', record.id)], limit=1, order='data desc')
+            prev = self.search_read([('id', '<', record.id)], limit=1, order='tgl_transaksi desc')
             prev_saldo = prev[0]['saldo'] if prev else 0
-            record.saldo = prev_saldo + record.kredit - record.debet
+            record.saldo = prev_saldo + record.kredit - record.debit
     
 
     
